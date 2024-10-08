@@ -101,14 +101,3 @@ body {
 .plant-form {
     grid-template: repeat(4, 1fr) / 1fr;
 }
-
-
-.userpage-footer {
-    padding: 1rem 0.5rem;
-    aspect-ratio: 3/2;
-    grid-template: 1fr 1fr/ 1fr 1fr;
-}
-
-.userpage-footer__image--flat {
-    width: 100%;
-}
