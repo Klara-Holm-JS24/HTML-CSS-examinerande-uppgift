@@ -1,0 +1,114 @@
+:root {
+    --brown: #9e6d52;
+    --green: #0a846e;
+    --red: #b83656;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: initial;
+}
+
+
+body {
+    width: 100vw;
+    min-width: 0px;
+}
+
+
+.hamburger-menu {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    height: 1rem;
+}
+
+
+.header-grid {
+    aspect-ratio: 2/3;
+    grid-template: repeat(3, 1fr) / 1fr 1fr;
+}
+
+.header-grid__item--big {
+    grid-column-end: span 2;
+}
+
+.mainpage-header__title {
+    font-size: 2rem;
+}
+
+.main-section {
+    padding: 2rem 0.5rem;
+}
+
+.main-section--reverse-on-mobile {
+    flex-direction: column-reverse;
+}
+
+.main-section__content {
+    align-items: center;
+    text-align: center;
+}
+
+.main-section__title {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.main-section__figure {
+    width: 80%;
+}
+
+.button--right-on-desktop {
+    align-self: center;
+}
+
+.article-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.plant-article__title {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+
+.plant-article__date {
+    margin-right: 0.3rem;
+    text-align: end;
+} 
+
+.plant-article__credit {
+    margin-left: 0.3rem;
+}
+
+.plant-article__remove-icon {
+    margin-left: auto;
+    margin-right: 0.3rem;
+    height: 1.5rem;
+}
+
+
+.mainpage-footer {
+    aspect-ratio: 1/2;
+    flex-direction: column-reverse;
+}
+
+
+
+.plant-form {
+    grid-template: repeat(4, 1fr) / 1fr;
+}
+
+
+.userpage-footer {
+    padding: 1rem 0.5rem;
+    aspect-ratio: 3/2;
+    grid-template: 1fr 1fr/ 1fr 1fr;
+}
+
+.userpage-footer__image--flat {
+    width: 100%;
+}

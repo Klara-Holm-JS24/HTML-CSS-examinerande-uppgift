@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Sidor</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/userpage.css">
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:812px)">
+</head>
+<body>
+    <img src="assets/icons/hamburger.svg" alt="Hamburger menu icon" class="hamburger-menu mobile-only">
+    <nav class="nav desktop-only">
+        <a href="#" class="nav__link">PLANER</a>
+        <a href="#" class="nav__link">HISTORIK</a>
+        <a href="#" class="nav__link">TIPS</a>
+        <a href="index.html" class="nav__link">LOGGA UT</a>
+    </nav>
+    <header class="userpage-header">
+        <img src="assets/icons/Logo.svg" alt="Logo icon" class="userpage-header__icon">
+        <h1 class="userpage-header__title">Mina sidor</h1>        
+    </header>
+    <main>
+        <section class="main-section main-section--column">
+            <h2 class="main-section__title main-section__title--light">Lägg till ny plantering:</h2>
+            <form action="#" class="plant-form">
+                <label for="plant">Planta:</label>
+                <input type="text" name="plant" class="plant-form__input">
+                <label for="date">Datum:</label>
+                <input type="text" name="date" class="plant-form__input">
+            </form>
+            <button class="button button--green-big button--center">LÄGG TILL</button>
+        </section>
+        <section class="main-section main-section--column main-section--centered">
+            <h2 class="main-section__title">Dina planterade planteringar:</h2>
+            <div class="article-grid">
+                <article class="plant-article">
+                    <div class="plant-article__figure icon-container">
+                        <img src="assets/icons/plant.svg" alt="Plant icon" class="icon-container__icon desktop-only">
+                        <img src="assets/images/gurka.avif" alt="Cucumber" class="icon-container__image icon-container__image--flat">
+                    </div>
+                    <h3 class="plant-article__title">Gurka</h3>
+                    <p class="plant-article__date">15 april 2024</p>
+                    <p class="plant-article__credit">Rico Coolio</p>
+                    <button class="plant-article__button button button--red-small desktop-only">TA BORT</button>
+                    <img src="assets/icons/trashcan.svg" alt="Trashcan icon" class="plant-article__remove-icon mobile-only">
+                </article>
+            </div>
+        </section>
+        <section class="main-section main-section--column main-section--centered">
+            <h2 class="main-section__title">Dina planterade planteringar:</h2>
+            <div class="article-grid">
+                <article class="plant-article">
+                    <div class="plant-article__figure icon-container">
+                        <img src="assets/icons/plant.svg" alt="Plant icon" class="icon-container__icon desktop-only">
+                        <img src="assets/images/gurka.avif" alt="Cucumber" class="icon-container__image icon-container__image--flat">
+                    </div>
+                    <h3 class="plant-article__title">Gurka</h3>
+                    <p class="plant-article__date">15 april 2024</p>
+                    <p class="plant-article__credit">Rico Coolio</p>
+                    <button class="plant-article__button button button--red-small desktop-only">TA BORT</button>
+                    <img src="assets/icons/trashcan.svg" alt="Trashcan icon" class="plant-article__remove-icon mobile-only">
+                </article>
+                <article class="plant-article">
+                    <div class="plant-article__figure icon-container">
+                        <img src="assets/icons/plant.svg" alt="Plant icon" class="icon-container__icon desktop-only">
+                        <img src="assets/images/gurka.avif" alt="Cucumber" class="icon-container__image icon-container__image--flat">
+                    </div>
+                    <h3 class="plant-article__title">Gurka</h3>
+                    <p class="plant-article__date">15 april 2024</p>
+                    <p class="plant-article__credit">Rico Coolio</p>
+                    <button class="plant-article__button button button--red-small desktop-only">TA BORT</button>
+                    <img src="assets/icons/trashcan.svg" alt="Trashcan icon" class="plant-article__remove-icon mobile-only">
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="userpage-footer">
+        <div class="userpage-footer__image-container">
+            <img src="assets/images/tjejmedhatt.avif" alt="Hat-wearing woman among plants" class="userpage-footer__image userpage-footer__image--flat">
+        </div>
+        <div class="userpage-footer__image-container">
+            <img src="assets/images/plockar.avif" alt="Man picking bell peppers" class="userpage-footer__image userpage-footer__image--flat">
+        </div>
+        <div class="userpage-footer__image-container">
+            <img src="assets/images/vattenkanna.avif" alt="Watering pot being used" class="userpage-footer__image userpage-footer__image--tall">
+        </div>
+        <div class="userpage-footer__image-container">
+            <img src="assets/images/massagrönsaker.avif" alt="Carrots etcetera" class="userpage-footer__image userpage-footer__image--flat">
+        </div>
+    </footer>
+    <a href="userpage.html" class="bottom-link">Till toppen av sidan</a>
+</body>
+</html>

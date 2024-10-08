@@ -1,0 +1,335 @@
+:root {
+    --brown: #9e6d52;
+    --green: #0a846e;
+    --red: #b83656;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mobile-only {
+    display: none;
+}
+
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #fcf6fc;
+}
+
+body {
+    width: calc(100% - 16rem);
+    min-width: 812px; /*Needed despite MQ since we want margins to diminish*/
+    margin: auto;
+    background-color: white;
+}
+
+.header-grid {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.header-grid__item {
+    grid-area: auto;
+
+}
+
+.header-grid__item--big {
+    grid-row-end: span 2;
+}
+
+
+
+
+.nav {
+    height: 5rem;
+    border-bottom: 3px solid lightgrey;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--green);
+    font-size: 1.5rem;
+}
+
+.nav__link:hover {
+    color: var(--brown);
+}
+
+
+
+
+
+.mainpage-header__title {
+    color: var(--green);
+    text-align: center;
+    font-size: 4rem;
+    margin: 2rem;
+}
+
+
+
+
+
+.main-section {
+    display: flex;
+
+    padding: 4rem 2rem;
+    gap: 2rem;
+}
+
+.main-section--column {
+    flex-direction: column;
+}
+
+.main-section--centered {
+    align-items: center;
+}
+
+.main-section__content {
+    flex: 2;
+    min-width: 15rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.main-section__title {
+    font-size: 2rem;
+}
+
+.main-section__title--light {
+    font-weight: 200;
+}
+
+.main-section__figure {
+    flex: 1;
+    min-width: 0;
+}
+
+
+
+
+
+
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr; /*autorows to allow userpage's grid to shrink in height*/
+    gap: 1rem;
+}
+
+.plant-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 3rem 3rem;
+
+    align-items: center;
+
+    box-shadow: 3px 3px 2px lightgrey;
+}
+
+.plant-article__figure {
+    grid-column-end: span 2;
+    aspect-ratio: 1;
+}
+
+.plant-article__title {
+    margin-left: 1rem;
+
+    font-size: 1.3rem;
+}
+
+.plant-article__date {
+    margin-left: auto;
+    margin-right: 1rem;
+
+    text-wrap: nowrap;
+
+    font-weight: 1000;
+}
+
+.plant-article__credit {
+    margin-left: 1rem;
+
+    text-wrap: nowrap;
+
+    color: rgb(169, 166, 166);
+}
+
+.plant-article__button {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+
+
+
+.button {
+    color: white;
+    border: 2px solid;
+    border-radius: 0.5rem;
+}
+
+.button--green-big {
+    font-size: 1.5rem;
+    background-color: var(--green);
+    border-color: var(--green);
+    padding: 1rem 2rem;
+}
+
+.button--green-big:hover {
+    background-color: white;
+    color: var(--green);
+}
+
+.button--red-small {
+    font-weight: 1000;
+    background-color: var(--red);
+    border-color: var(--red);
+    padding: 0.5rem 1rem;
+    width: max-content;
+}
+
+.button--red-small:hover {
+    background-color: white;
+    color: var(--red);
+}
+
+.button--right-on-desktop {
+    align-self: flex-end;
+}
+
+.button--center {
+    align-self: center;
+}
+
+
+
+.mainpage-footer {
+    display: flex;
+    aspect-ratio: 2/1;
+    background: url(/assets/images/handsidan.avif);
+    background-size: cover;
+    background-position: center;
+}
+
+.mainpage-footer__item {
+    flex: 1;
+    display: grid;
+}
+
+.mainpage-footer__item--dimmed {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-info {
+    display: grid;
+    grid-template: 1fr 1fr / max-content max-content;
+    padding: 1rem;
+
+    align-items: end;
+    justify-content: space-between;
+
+    color: white;
+}
+
+.footer-info__title {
+    grid-column-end: span 2;
+
+    font-size: 4rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+.footer-info__content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.bottom-link {
+    padding: 1rem;
+    display: block;
+    text-align: center;
+
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+.icon-container {
+    display: grid;
+
+    /*Probably overkill but made things work*/
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+
+   
+    overflow: hidden; /*Only works on child elements (background image) if applied here as well*/
+}
+
+.icon-container--green {
+    background-color: var(--green);
+}
+
+.icon-container--brown {
+    background-color: var(--brown);
+}
+
+.icon-container--round {
+    aspect-ratio: 1;
+    padding: 5%;
+    border-radius: 100%;
+
+    align-self: center;
+
+}
+
+.icon-container__icon {
+    grid-area: 1/1/2/2;
+    max-width: 15rem;
+    max-height: 90%;
+    z-index: 1000;
+}
+
+.icon-container__image {
+    grid-area: 1/1/2/2;
+    overflow: hidden;
+}
+
+
+/*Minimizes image overflow while ensuring they fill their respective containers*/
+.icon-container__image--tall {
+    width: 100%;
+}
+
+.icon-container__image--flat {
+    height: 100%;
+}
+
+
+
+
+.line {
+    width: 20rem;
+    margin: auto;
+    border: 1.5px solid var(--green);
+    border-radius: 1px;
+}
