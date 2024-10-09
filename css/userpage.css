@@ -80,4 +80,9 @@
     .userpage-footer__image--flat {
         width: 100%;
     }
+
+    
+    .plant-form {
+        grid-template: repeat(4, 1fr) / 1fr;
+    }
 }

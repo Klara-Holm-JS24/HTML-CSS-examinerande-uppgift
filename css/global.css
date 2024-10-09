@@ -12,7 +12,7 @@
 
 .mobile-only {
     display: none;
-}
+} 
 
 html {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -20,38 +20,86 @@ html {
 }
 
 body {
+    min-width: 812px; /*MQ for smaller widths*/
+
     width: calc(100% - 16rem);
-    min-width: 812px; /*Needed despite MQ since we want margins to diminish*/
-    margin: auto;
+    margin: 0 auto 6rem; /*Lets side margins grow up to 8rem*/
+
     background-color: white;
 }
 
+
 .header-grid {
-    width: 100%;
     aspect-ratio: 2 / 1;
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
 }
 
-.header-grid__item {
-    grid-area: auto;
-
-}
-
 .header-grid__item--big {
     grid-row-end: span 2;
+} /*Excessive use of BEM or good for potential future development?*/
+
+
+.icon-container {
+    display: grid;
+
+    /*Probably overkill but made things work*/
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+
+   
+    overflow: hidden; /*Only works on child elements (background image) if applied here as well*/
 }
 
+.icon-container--green {
+    background-color: var(--green);
+}
+
+.icon-container--brown {
+    background-color: var(--brown);
+}
+
+.icon-container--round {
+    aspect-ratio: 1;
+    padding: 5%;
+    border-radius: 100%;
+
+    align-self: center;
+
+}
+
+.icon-container__icon {
+    grid-area: 1/1/2/2;
+    max-width: 20rem;
+    max-height: 90%;
+    z-index: 1000;
+}
+
+.icon-container__image {
+    grid-area: 1/1/2/2;
+    overflow: hidden;
+}
+
+
+/*Minimizes image overflow while ensuring images fill their respective containers*/
+.icon-container__image--tall {
+    width: 100%;
+}
+.icon-container__image--flat {
+    height: 100%;
+}
 
 
 
 .nav {
     height: 5rem;
-    border-bottom: 3px solid lightgrey;
+    border-bottom: 3px solid lightgrey; /*Design*/
 
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; /*Layout*/
 }
 
 .nav__link {
@@ -59,13 +107,9 @@ body {
     color: var(--green);
     font-size: 1.5rem;
 }
-
 .nav__link:hover {
     color: var(--brown);
 }
-
-
-
 
 
 .mainpage-header__title {
@@ -76,22 +120,21 @@ body {
 }
 
 
-
-
-
 .main-section {
     display: flex;
 
     padding: 4rem 2rem;
     gap: 2rem;
 }
-
 .main-section--column {
     flex-direction: column;
 }
-
 .main-section--centered {
     align-items: center;
+}
+
+.main-section__figure {
+    flex: 1;
 }
 
 .main-section__content {
@@ -108,28 +151,18 @@ body {
 .main-section__title {
     font-size: 2rem;
 }
-
 .main-section__title--light {
     font-weight: 200;
 }
-
-.main-section__figure {
-    flex: 1;
-    min-width: 0;
-}
-
-
-
-
-
 
 
 .article-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 1fr; /*autorows to allow userpage's grid to shrink in height*/
+    grid-auto-rows: 1fr; /*auto-rows to allow content to determine grid size*/
     gap: 1rem;
 }
+
 
 .plant-article {
     display: grid;
@@ -182,19 +215,16 @@ body {
     border: 2px solid;
     border-radius: 0.5rem;
 }
-
 .button--green-big {
     font-size: 1.5rem;
     background-color: var(--green);
     border-color: var(--green);
     padding: 1rem 2rem;
 }
-
 .button--green-big:hover {
     background-color: white;
     color: var(--green);
 }
-
 .button--red-small {
     font-weight: 1000;
     background-color: var(--red);
@@ -202,20 +232,16 @@ body {
     padding: 0.5rem 1rem;
     width: max-content;
 }
-
 .button--red-small:hover {
     background-color: white;
     color: var(--red);
 }
-
 .button--right-on-desktop {
     align-self: flex-end;
 }
-
 .button--center {
     align-self: center;
 }
-
 
 
 .mainpage-footer {
@@ -228,12 +254,12 @@ body {
 
 .mainpage-footer__item {
     flex: 1;
-    display: grid;
+    display: grid; /*Instead of going to all direct children and assigning height: 100%;*/
 }
-
 .mainpage-footer__item--dimmed {
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 .footer-info {
     display: grid;
@@ -262,69 +288,13 @@ body {
 
 
 .bottom-link {
-    padding: 1rem;
+    padding: 2rem;
     display: block;
     text-align: center;
 
     text-decoration: none;
     color: #000;
 }
-
-
-
-.icon-container {
-    display: grid;
-
-    /*Probably overkill but made things work*/
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-
-   
-    overflow: hidden; /*Only works on child elements (background image) if applied here as well*/
-}
-
-.icon-container--green {
-    background-color: var(--green);
-}
-
-.icon-container--brown {
-    background-color: var(--brown);
-}
-
-.icon-container--round {
-    aspect-ratio: 1;
-    padding: 5%;
-    border-radius: 100%;
-
-    align-self: center;
-
-}
-
-.icon-container__icon {
-    grid-area: 1/1/2/2;
-    max-width: 15rem;
-    max-height: 90%;
-    z-index: 1000;
-}
-
-.icon-container__image {
-    grid-area: 1/1/2/2;
-    overflow: hidden;
-}
-
-
-/*Minimizes image overflow while ensuring they fill their respective containers*/
-.icon-container__image--tall {
-    width: 100%;
-}
-
-.icon-container__image--flat {
-    height: 100%;
-}
-
-
 
 
 .line {
